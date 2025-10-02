@@ -1,21 +1,28 @@
-# 🌍 PolyChat - Your Multilingual Companion
+# 🌍 PolyChat - Multilingual Wikipedia Q&A Chatbot
 
-PolyChat is a simple yet powerful multilingual chatbot built with Streamlit that supports conversation in English, Hindi, Spanish, and French.
+PolyChat is a **multilingual chatbot** built with **Streamlit** that allows users to ask questions in multiple languages and receive culturally aware answers from **Wikipedia**. It supports automatic translation, chat history, and multiple language interfaces.
 
-## ✨ Features
+---
 
-- **Multilingual Support**: Communicate in English, Hindi, Spanish, and French
-- **Automatic Language Detection**: Automatically detects the language of your input
-- **Smart Translation**: Translates your input to English, generates a response, and translates it back to your language
-- **Context-Aware Responses**: Maintains context across the conversation
-- **Clean UI**: Beautiful, minimal, and user-friendly interface
-- **Manual Override**: Option to manually select your preferred language
-- **Conversation Management**: Clear/reset conversation with a single click
+## 🚀 Features
 
-## 🚀 Installation
+- **Multilingual Support**:  
+  Supports **English (en)**, **Hindi (hi)**, and **Telugu (te)**.  
+- **Wikipedia Integration**:  
+  Retrieves answers from Wikipedia and provides summaries of relevant topics.  
+- **Translation**:  
+  Answers are translated to the user's preferred language using Google Translate.  
+- **Chat History**:  
+  Maintains conversation within the session for easy reference.  
+- **User-Friendly Interface**:  
+  Built with Streamlit, providing a clean and interactive chat experience.  
 
-1. Clone or download this repository
+---
 
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
+## 🛠 Installation
+
+1. **Clone the repository** (or copy your code to a folder):
+
+   ```bash
+   git clone https://github.com/yourusername/polychat.git
+   cd polychat
