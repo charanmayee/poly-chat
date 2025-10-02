@@ -1,3 +1,6 @@
+Python 3.7+
 streamlit
 requests
-langdetect 
+langdetect
+wikipedia
+googletrans==4.0.0rc1
