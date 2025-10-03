@@ -1,5 +1,5 @@
 import streamlit as st
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 from typing import Optional
 
 class TranslationHelper:
@@ -7,7 +7,6 @@ class TranslationHelper:
     
     def __init__(self):
         """Initialize translation helper"""
-        self.translator = Translator()
         self.supported_languages = {
             'en': 'English',
             'hi': 'Hindi',
@@ -34,60 +33,17 @@ class TranslationHelper:
             if source_language == target_language:
                 return text
             
-            # Perform translation
-            result = self.translator.translate(
-                text, 
-                src=source_language, 
-                dest=target_language
-            )
+            # Perform translation using deep-translator
+            translator = GoogleTranslator(source=source_language, target=target_language)
+            result = translator.translate(text)
             
-            return result.text
+            return result
             
         except Exception as e:
             st.error(f"Translation error: {str(e)}")
             # Return original text if translation fails
             return text
     
-    def detect_language(self, text: str) -> Optional[str]:
-        """
-        Detect language of given text
-        
-        Args:
-            text: Text to analyze
-            
-        Returns:
-            Detected language code or None
-        """
-        try:
-            if not text or not text.strip():
-                return None
-            
-            result = self.translator.detect(text)
-            return result.lang
-            
-        except Exception as e:
-            st.error(f"Language detection error: {str(e)}")
-            return None
-    
-    def get_translation_confidence(self, text: str) -> float:
-        """
-        Get confidence score for language detection
-        
-        Args:
-            text: Text to analyze
-            
-        Returns:
-            Confidence score (0.0 to 1.0)
-        """
-        try:
-            if not text or not text.strip():
-                return 0.0
-            
-            result = self.translator.detect(text)
-            return result.confidence
-            
-        except Exception as e:
-            return 0.0
     
     def is_supported_language(self, language_code: str) -> bool:
         """
