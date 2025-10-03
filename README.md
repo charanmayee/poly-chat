@@ -28,9 +28,10 @@ Preferred communication style: Simple, everyday language.
 
 2. **TranslationHelper** (`utils/translation_helper.py`)
    - Manages text translation between supported languages
-   - Uses Google Translate API via `googletrans` library
+   - Uses Google Translate API via `deep-translator` library (GoogleTranslator)
    - Supports automatic source language detection
    - Includes fallback mechanism to return original text on translation failures
+   - **Updated (Oct 2025)**: Migrated from googletrans to deep-translator for Python 3.13 compatibility
 
 3. **LanguageHelper** (`utils/language_helper.py`)
    - Performs language detection using `langdetect` library
@@ -64,9 +65,10 @@ Preferred communication style: Simple, everyday language.
 2. **wikipedia**: Python wrapper for Wikipedia API
    - Provides search and summary retrieval functionality
    - Supports multiple language Wikipedias
-3. **googletrans**: Unofficial Google Translate API client
-   - Enables text translation between languages
-   - Note: May have rate limiting or reliability concerns as an unofficial API
+3. **deep-translator**: Translation library with support for multiple translation engines
+   - Enables text translation between languages using Google Translate API
+   - More actively maintained and Python 3.13 compatible than googletrans
+   - Version: 1.11.4
 4. **langdetect**: Language detection library
    - Port of Google's language-detection library
    - Returns language codes with probability scores
@@ -75,11 +77,10 @@ Preferred communication style: Simple, everyday language.
 1. **Wikipedia API**: Accessed through the `wikipedia` Python library
    - Used for searching articles and retrieving summaries
    - Language-specific Wikipedia instances (en.wikipedia.org, hi.wikipedia.org, te.wikipedia.org)
-2. **Google Translate**: Accessed through `googletrans` library
-   - Unofficial API wrapper (potential stability concerns)
-   - Used for all translation operations
+2. **Google Translate**: Accessed through `deep-translator` library
+   - Uses GoogleTranslator for translation operations
+   - More reliable and Python 3.13 compatible than the older googletrans library
 
 ### Potential Issues
-- **googletrans**: Being an unofficial API wrapper, it may break if Google changes their translation service
 - **Rate Limiting**: Both Wikipedia and Google Translate may impose rate limits on excessive requests
 - **Alternative Consideration**: Official translation APIs (Google Cloud Translation API, Azure Translator) would provide more reliability but require API keys and billing setup
