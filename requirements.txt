@@ -1,6 +1,6 @@
 python-3.11
 streamlit
-requests
+
 langdetect
 wikipedia
 googletrans==4.0.0rc1
